@@ -1,10 +1,17 @@
-body{
+/* BASICS */
+#main-content{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: darkgrey;
 }
 
+h2{
+    text-align: center;
+    color: black;
+}
+
+/* NAVIGATOR */
 .nav{
     font-size: 150%;
     background-color: #595959;
@@ -43,12 +50,16 @@ a{
     color: purple;
 }
 
-h2{
-    text-align: center;
-    color: black;
+/* BOX LINKS */
+
+.box1{
+    background-image: url(background.jpg);
+    padding: 100px;
+    margin: 100px;
+    background-repeat: round;
 }
 
-.box{
+box2{
     background-image: url(background.jpg);
     padding: 100px;
     margin: 100px;
