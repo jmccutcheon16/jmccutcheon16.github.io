@@ -59,13 +59,20 @@ a{
     background-repeat: round;
 }
 
-box2{
+.box2{
     background-image: url(background.jpg);
     padding: 100px;
     margin: 100px;
     background-repeat: round;
 }
 
+.box3 .subNav{
+    display: flex;
+    background-image: url(background.jpg);
+    padding: 100px;
+    margin: 100px;
+    background-repeat: round;
+}
 
 
 

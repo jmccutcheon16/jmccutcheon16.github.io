@@ -29,8 +29,8 @@ body {
 }
 
 .example input:focus {
-    background:skyblue;
-    color:magenta;
+    background:greenyellow;
+    color:green;
 }
 
 .example button {
