@@ -1,0 +1,48 @@
+/* BASICS FOR MOBILE */
+html{
+	font-size: 100%; font-family: sans-serif;
+	background: #73000a;
+}
+body{
+	font-family: "Berlingske Sans", "Arial", sans-serif;
+	font-weight: 500;
+}
+#top-black{
+	background: black;
+}
+#top-nav ul{
+	display: flex;
+
+}
+#img-and-search section{
+	display: flex;
+}
+#main-nav{
+	display: flex;
+}
+#top-black #top-nav{
+	color: #73000a;
+}
+a{
+	align-content: center;
+	color: #73000a;
+	text-decoration: none;
+	padding: 5px;
+}
+label{
+	font-weight: normal;
+	font-size: 14px;
+	width: 100%;
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+}
+#main-nav li a{
+	color: white;
+	text-decoration: none;
+	list-style-type: none;
+}
+li {
+	list-style: none;
+}
+
