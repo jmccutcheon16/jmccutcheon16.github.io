@@ -8,12 +8,51 @@
         </title>
     </head>
     <body>
-        <div id="title">
+        <header id="main-header">
+
             <h1>If Statement Assignment</h1>
+
+            <nav id="main-nav">
+
+                <div id="nav-toggle">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <ul id="main-nav-items" class="hidden">
+                    <li><a href="#">Exercise 1</a></li>
+                    <li><a href="#">Exercise 2</a></li>
+                </ul>
+
+            </nav>
+
+        </header>
+        <div class="container">
+            <div id="content">
+
+                <section class="box">
+
+                    <h1>Who's the Oldest</h1>
+
+                        <p><label for="txt-name-1">Name 1: </label><input id="txt-name-1"></p>
+                        <p><label for="txt-age-1">Age 1: </label><input id="txt-age-1"></p>
+                        <P><label for="txt-name-2">Name 2: </label><input id="txt-name-2"></p>
+                        <p><label for="txt-age-2">Age 2: </label><input id="txt-age-2"></p>
+                        <p><label for="txt-name-3">Name 3: </label><input id="txt-name-3"></p>
+                        <p><label for="txt-age-3">Age 3: </label><input id="txt-age-3"></p>
+                    </p>
+
+                    <button id="compare-age-btn">Compare Ages</button>
+
+                    <p id="compare-age-results"></p>
+
+                </section>
+
+            </div>
         </div>
-        <div class="menu-1">
-            
-        </div>
+        
+        <script src="script.js"></script>
     </body>
-    <script src="script.js"></script>
+   
 </html>
