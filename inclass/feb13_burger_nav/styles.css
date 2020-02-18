@@ -38,6 +38,10 @@ body {
     padding:5px;
 }
 
+.cookie-list{
+    list-style-type: none;
+}
+
 .green {
     color:green;
 }
