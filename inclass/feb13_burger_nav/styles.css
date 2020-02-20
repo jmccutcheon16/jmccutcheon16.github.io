@@ -3,6 +3,14 @@ body {
     background:slategray;
 }
 
+#box{
+    --dim: 100px;
+    width:var(--dim);
+    height: var(--dim);
+    margin: 20px auto;
+    background: blue;
+}
+
 .example {
     background:white;
     padding:10px;
