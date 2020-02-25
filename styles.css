@@ -66,6 +66,12 @@ a{
     background-repeat: round;
 }
 
+.subNav{
+    display:flex;
+    padding: 10px;
+    margin: 5px;;
+}
+
 .box3 .subNav{
     display: flex;
     background-image: url(background.jpg);
