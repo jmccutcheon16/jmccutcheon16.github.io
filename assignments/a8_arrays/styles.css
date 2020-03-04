@@ -3,21 +3,12 @@ body {
 	background: slategray;
 }
 
-#box {
-	--dim: 100px;
-	width: var(--dim);
-	height: var(--dim);
-	margin: 20px auto;
-	background: blue;
-}
-
 .example {
 	background: white;
 	padding: 10px;
 	margin: 10px;
 	border-radius: 5px;
-	flex: 1;
-	width: 30%;
+	min-height: 200px;
 }
 
 .example h1 {
@@ -73,8 +64,8 @@ body {
 	border: 1px solid black;
 	background: linear-gradient(
 		0deg,
-		rgba(255, 0, 0, 1) 0%,
-		rgba(255, 0, 0, 1) 25%,
+		rgba(249, 13, 3, 1) 0%,
+		rgba(249, 13, 3, 1) 25%,
 		rgba(255, 255, 255, 1) 25%,
 		rgba(255, 255, 255, 1) 100%
 	);
@@ -84,6 +75,10 @@ body {
 	font-size: 20px;
 	font-weight: 700;
 	font-style: italic;
+}
+
+.highlight {
+	background: lightcyan;
 }
 
 .error {
@@ -97,6 +92,14 @@ body {
 #main-header h1 {
 	text-align: center;
 	color: #fff;
+}
+
+#box {
+	--dim: 100px;
+	width: var(--dim);
+	height: var(--dim);
+	background: blue;
+	margin: 20px auto;
 }
 
 /* Nav Bar */
@@ -113,7 +116,7 @@ body {
 
 #main-nav a {
 	text-decoration: none;
-	color: #000000;
+	color: #000;
 	cursor: pointer;
 }
 
@@ -125,19 +128,21 @@ body {
 	margin: 6px 0;
 }
 
-.highlight {
-	background: yellow;
-}
-
-/* Large Resolutions */
+/* Large Resolutions Only */
 @media (min-width: 900px) {
 	#content {
 		display: flex;
+		flex-wrap: wrap;
 	}
 
-	#content {
-		height: 400px;
-		width: 400px;
+	.example {
+		width: 30%;
+		flex: 1;
+	}
+
+	.largewidth {
+		width: 80%;
+		margin: auto;
 	}
 
 	.example p {
@@ -164,15 +169,19 @@ body {
 	#nav-toggle {
 		display: none;
 	}
+
 	#main-nav ul {
 		display: flex;
 	}
+
 	#main-nav li {
 		background: transparent;
 	}
+
 	#main-nav a {
 		border-bottom: 2px solid transparent;
 	}
+
 	#main-nav a:hover {
 		border-bottom: 2px solid white;
 	}
