@@ -8,6 +8,7 @@ let quotes = [
 ];
 
 // TICK TIMER
+document.getElementById('quotes-results').innerHTML = quotes[4];
 var ticking = window.setInterval(tick, 2000);
 let currentIndex = -1;
 function tick() {
