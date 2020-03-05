@@ -25,34 +25,13 @@ let p = new Array(10);
 for (var i = 0; i < p.length; i++) {
     p[i] = [];
 }
-function showRainbow() {
-    let pDraw = document.createElement('p');
-    let pDraw2 = document.getElementById('rainbow');
-    for (var i = 0; i < p.length; i++) {
-        for (var j = 0; j < p[1].length; j++) {
-            pDraw.innerHTML += 'L';
-            pDraw2.append(pDraw);
-        }
+let count = 0;
+/*function showRainbow() {
+    for (let i = 0; i < 100; i++) {
+        setTimeout(showRainbow, 15000);
+        console.log('working ' + i);
     }
-}
+}*/
 
-window.addEventListener('load', function() {
-    var elements = document.getElementsByClassName('rainbowText');
-    for (let i = 0; i < elements.length; i++) {
-        generateRainbowText(elements[i]);
-    }
-});
-
-function generateRainbowText(element) {
-    var text = element.innerText;
-    element.innerHTML = '';
-    for (let i = 0; i < p.length; i++) {
-        let charElem = document.createElement('span');
-        charElem.style.color = 'hsl(' + (360 * i) / text.length + ',80%,50%)';
-        charElem.innerHTML = p[i];
-        element.append(charElem);
-    }
-}
-
-let btnRainbow = document.getElementById('btn-rainbow');
-btnRainbow.onclick = generateRainbowText(document.getElementById('rainbow'));
+//let btnRainbow = document.getElementById('btn-rainbow');
+//btnRainbow.onclick = showRainbow;
