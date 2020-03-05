@@ -21,14 +21,38 @@ function tick() {
     document.getElementById('quotes-results').innerHTML = quotes[currentIndex];
 }
 
+let p = new Array(10);
+for (var i = 0; i < p.length; i++) {
+    p[i] = [];
+}
 function showRainbow() {
-    let pRainbow = document.createElement('p');
-    let pRainbowInnerHTML = pRainbow.innerHTML;
-    let addText = (pRainbowInnerHTML += 'k');
-    pRainbowInnerHTML += 'k';
-    let log = console.log('working');
-    setTimeout(addText, 1000);
+    let pDraw = document.createElement('p');
+    let pDraw2 = document.getElementById('rainbow');
+    for (var i = 0; i < p.length; i++) {
+        for (var j = 0; j < p[1].length; j++) {
+            pDraw.innerHTML += 'L';
+            pDraw2.append(pDraw);
+        }
+    }
+}
+
+window.addEventListener('load', function() {
+    var elements = document.getElementsByClassName('rainbowText');
+    for (let i = 0; i < elements.length; i++) {
+        generateRainbowText(elements[i]);
+    }
+});
+
+function generateRainbowText(element) {
+    var text = element.innerText;
+    element.innerHTML = '';
+    for (let i = 0; i < p.length; i++) {
+        let charElem = document.createElement('span');
+        charElem.style.color = 'hsl(' + (360 * i) / text.length + ',80%,50%)';
+        charElem.innerHTML = p[i];
+        element.append(charElem);
+    }
 }
 
 let btnRainbow = document.getElementById('btn-rainbow');
-btnRainbow.onclick = showRainbow;
+btnRainbow.onclick = generateRainbowText(document.getElementById('rainbow'));
