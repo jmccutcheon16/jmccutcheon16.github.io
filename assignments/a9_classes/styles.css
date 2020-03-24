@@ -1,0 +1,64 @@
+* {
+    font-family: sans-serif;
+}
+html {
+    background: #abc;
+}
+
+.example {
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    min-height: 300px;
+}
+
+.example h1 {
+    text-align: center;
+    background: white;
+}
+
+section {
+    padding: 10px;
+    margin: 10px 10px 10px 10px;
+    width: 30%;
+    background: white;
+    border-radius: 5px;
+}
+
+h3 {
+    background: white;
+}
+
+.hidden {
+    /*display: none;*/
+}
+
+ul li {
+    background: white;
+    list-style-type: none;
+}
+
+#toys-list {
+    padding: 10px;
+    background: lightskyblue;
+    display: flex;
+    border-radius: 5px;
+}
+
+img {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+@media (min-width: 900px) {
+    #content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .example {
+        width: 100%;
+        margin: auto;
+    }
+}
