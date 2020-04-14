@@ -22,7 +22,7 @@ app.get("/api/fruits", (req, res) => {
 });
 
 app.get("/api/fruits/:id", (req, res) => {
-    const fruit = fruits.find((r) => r.id === parseInt(req.params.id));
+    const fruit = fruits.find((f) => f.id === parseInt(req.params.id));
 
     if (!fruit)
         res.status(404).send("The fruit with the given ID was not found");

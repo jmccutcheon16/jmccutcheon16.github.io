@@ -61,22 +61,18 @@ a{
 
 .box2{
     background-image: url(background.jpg);
-    padding: 100px;
-    margin: 100px;
     background-repeat: round;
 }
 
-.subNav{
-    display:flex;
-    padding: 10px;
-    margin: 5px;;
+.subNav ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding:5px;
+    margin-bottom: 5px;
 }
 
 .box3 .subNav{
-    display: flex;
     background-image: url(background.jpg);
-    padding: 100px;
-    margin: 100px;
     background-repeat: round;
 }
 

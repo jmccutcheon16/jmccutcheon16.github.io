@@ -14,6 +14,7 @@ body {
     padding: 5px;
     margin: 5px;
     border-radius: 5px;
+    animation: animate 2s 1;
 }
 
 .fruit a {
@@ -34,4 +35,12 @@ body {
     width: 45%;
     margin: 5px;
     border-radius: 5px;
+}
+
+@keyframes animate {
+    0% {
+        color: black;
+        margin-top: -40px;
+        opacity: 0%;
+    }
 }
