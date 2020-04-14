@@ -37,14 +37,14 @@ async function showFruitDetails() {
 
     let fruit = await response.json();
 
-    document.getElementById("fruit-id").textContent = fruit.id;
-    document.getElementById("fruit-name").textContent.value = fruit.name;
-    document.getElementById("fruit-taste").textContent.value = fruit.taste;
-    document.getElementById("fruit-size").textContent.value = fruit.size;
+    document.getElementById("fruit-id").textContent.value = fruit.id;
+    document.getElementById("txt-name").value = fruit.name;
+    document.getElementById("txt-taste").value = fruit.taste;
+    document.getElementById("txt-size").value = fruit.size;
 }
 
 async function addFruit() {
-    let fruitName = document.getElementById("txt-add-fruit").value;
+    let fruitName = document.getElementById("txt-add-name").value;
     let fruitTaste = document.getElementById("txt-add-taste").value;
     let fruitSize = document.getElementById("txt-add-size").value;
 
