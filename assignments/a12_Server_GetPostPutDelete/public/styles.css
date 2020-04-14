@@ -1,0 +1,37 @@
+body {
+    font-family: arial;
+    text-align: center;
+}
+
+#fruit-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fruit {
+    width: 30%;
+    background: skyblue;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.fruit a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#fruit-forms {
+    display: flex;
+}
+
+.fruit-form {
+    background: lightpink;
+    padding: 5px;
+    width: 45%;
+    margin: 5px;
+    border-radius: 5px;
+}
