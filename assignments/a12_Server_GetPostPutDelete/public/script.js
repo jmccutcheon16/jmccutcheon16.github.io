@@ -119,7 +119,7 @@ window.onload = function () {
     addBtn.onclick = addFruit;
 
     let editBtn = document.getElementById("btn-edit-fruit");
-    editBtn.onclick = editBtn;
+    editBtn.onclick = editFruit;
 
     let deleteBtn = document.getElementById("btn-delete-fruit");
     deleteBtn.onclick = deleteFruit;
