@@ -15,9 +15,8 @@ function getCourseItem(course) {
     courseSection.classList.add("course");
 
     let title = document.createElement("a");
-    title.setAttribute("data-id", course.id);
+    title.setAttribute("data-id", course._id);
     title.href = "#";
-    title.onclick = showCourseDetails;
     let h3Elem = document.createElement("h3");
     h3Elem.textContent = course.courseName;
     title.append(h3Elem);
@@ -27,11 +26,28 @@ function getCourseItem(course) {
     description.textContent = course.description;
     courseSection.append(description);
 
+    let editButton = document.createElement("button");
+    editButton.innerHTML = "Edit";
+    editButton.id = "edit-btn";
+    editButton.setAttribute('data-id', course._id);
+    editButton.href = "#";
+    editButton.onclick = showCourseDetails;
+
+    let deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "Delete";
+    deleteButton.id = "delete-btn";
+    deleteButton.setAttribute('data-id', course._id);
+    deleteButton.href = '#';
+    deleteButton.onclick = deleteCourse;
+
+    courseSection.append(editButton);
+    courseSection.append(deleteButton);
+
     return courseSection;
 }
 
-async function showCourseDetails(course) {
-    let id = this.getAttribute("data-id");
+async function showCourseDetails() {
+    let id = this.getAttribute('data-id');
     let response = await fetch(`/api/courses/${id}`);
 
     if (response.status != 200) {
@@ -41,7 +57,7 @@ async function showCourseDetails(course) {
 
     course = await response.json();
 
-    document.getElementById("course-id").textContent.value = course.id;
+    document.getElementById("course-id").textContent = course._id;
     document.getElementById("txt-course-name").value = course.courseName;
     document.getElementById("txt-description").value = course.description;
     document.getElementById("txt-instructor").value = course.instructor;
@@ -54,9 +70,9 @@ async function addCourse() {
     let courseInstructor = document.getElementById("txt-add-instructor").value;
 
     let course = {
-        courseName: courseName,
-        description: courseDescription,
-        instructor: courseInstructor,
+        "courseName": courseName,
+        "description": courseDescription,
+        "instructor": courseInstructor,
     };
 
     let response = await fetch("/api/courses", {
@@ -77,16 +93,17 @@ async function addCourse() {
     displayCourses();
 }
 
-async function editCourse() {
-    let courseId = document.getElementById("course-id").textContent;
+async function editCourse(course) {
+
+    let courseId = course.getAttribute('data-id');
     let courseName = document.getElementById("txt-course-name").value;
     let courseDescription = document.getElementById("txt-description").value;
     let courseInstructor = document.getElementById("txt-instructor").value;
 
-    let course = {
-        courseName: courseName,
-        description: courseDescription,
-        instructor: courseInstructor,
+    let newCourse = {
+        "courseName": courseName,
+        "description": courseDescription,
+        "instructor": courseInstructor,
     };
 
     let response = await fetch(`/api/courses/${courseId}`, {
@@ -94,7 +111,7 @@ async function editCourse() {
         headers: {
             "Content-Type": "application/json;charset=utf-8",
         },
-        body: JSON.stringify(course),
+        body: JSON.stringify(newCourse),
     });
 
     if (response.status != 200) {
@@ -103,13 +120,14 @@ async function editCourse() {
     }
 
     let result = await response.json();
+    console.log(result);
     displayCourses();
 }
 
-async function deleteCourse() {
-    let courseId = document.getElementById("course-id").textContent;
+async function deleteCourse(course) {
+    let id = this.getAttribute("data-id");
 
-    let response = await fetch(`/api/courses/${courseId}`, {
+    let response = await fetch(`/api/courses/${id}`, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/json;charset=utf-8",
@@ -122,6 +140,7 @@ async function deleteCourse() {
     }
 
     let result = await response.json();
+    console.log(result);
     displayCourses();
 }
 
@@ -130,10 +149,4 @@ window.onload = function () {
 
     let addBtn = document.getElementById("btn-add-course");
     addBtn.onclick = addCourse;
-
-    let editBtn = document.getElementById("btn-edit-course");
-    editBtn.onclick = editCourse;
-
-    let deleteBtn = document.getElementById("btn-delete-course");
-    deleteBtn.onclick = deleteCourse;
 };

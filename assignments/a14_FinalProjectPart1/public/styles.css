@@ -1,9 +1,8 @@
 html {
-    background: black;
+    background: #8325CF;
     font-family: Arial, Helvetica, sans-serif;
 }
 body {
-    background: #abc;
     text-align: left;
     margin: 10px;
     border-radius: 10px;
@@ -16,7 +15,7 @@ h1 {
 
 .course-form {
     max-width: 500px;
-    background: white;
+    background: #EF2727;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -33,6 +32,11 @@ label {
 input {
     width: 100%;
     height: 30px;
+    border-radius: 3px;
+}
+
+h2{
+    text-align: center;
 }
 
 input #txt-description {
@@ -56,4 +60,26 @@ a {
 }
 .course h3 {
     text-align: center;
+}
+
+input:hover{
+    background-color: lightgray;
+    cursor: crosshair;
+}
+
+.course-form{
+    margin-top: 50px;
+    box-shadow: 5px 5px rgb(143, 11, 11);
+}
+
+button{
+    text-align: center;
+    position: relative;
+    align-content: center;
+    margin: auto;
+    padding: auto;
+    margin-left: 200px;
+    border-radius: 3px;
+    background-color: rgb(143, 11, 11);
+    color: white;
 }
